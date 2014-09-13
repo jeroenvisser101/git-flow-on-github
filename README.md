@@ -7,3 +7,4 @@ An extension for Google Chrome providing some extra features for Github to preve
 - Remove branch prefix from PR title
 - Compare Hotfixes to `master`
 - Compare Features to `develop`
+- Add a template for pull requests
