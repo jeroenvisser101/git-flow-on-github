@@ -9,8 +9,10 @@
         "128": "icons/icon.png"
     },
     "permissions": [
-        "*://*.github.com/*"
+        "*://*.github.com/*",
+        "storage"
     ],
+    "options_page": "options/options.html",
     "content_scripts": [
         {
             "matches": [

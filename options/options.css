@@ -1,0 +1,60 @@
+main {
+    width: 600px;
+    margin: 0 auto;
+}
+
+textarea {
+    min-height: 100px;
+    width: 100%;
+    max-width: 100%;
+
+    box-sizing: border-box;
+    padding: 5px;
+    border-radius: 4px;
+    border: 1px solid #9d9e99;
+    outline: none;
+}
+
+textarea:active,
+textarea:focus {
+    border-color: #3055a7;
+}
+
+h3 {
+    font-size: 2em;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 7px;
+}
+
+input[type="button"],
+input[type="submit"],
+button,
+.button {
+    margin-top: 5px;
+    outline: none;
+    border-radius: 4px;
+    border: 1px solid rgba(0, 0, 0, .3);
+    background-color: rgba(0, 0, 0, .04);
+    padding: 5px 15px;
+    box-shadow: -1px 0 1px rgba(255, 255, 255, .9) inset;
+}
+
+input[type="button"]:hover,
+input[type="submit"]:hover,
+button:hover,
+.button:hover {
+    border: 1px solid rgba(0, 0, 0, .32);
+    background-color: rgba(0, 0, 0, .06);
+}
+
+input[type="button"]:active,
+input[type="submit"]:active,
+button:active,
+.button:active {
+    border: 1px solid rgba(0, 0, 0, .4);
+    background-color: rgba(0, 0, 0, .1);
+}
+
+.right {
+    float: right;
+}
