@@ -1,0 +1,25 @@
+{
+    "name": "Git flow (for Github)",
+    "version": "0.1.0",
+    "manifest_version": 2,
+    "description": "Adds functionality to Github for working with the Git-flow workflow.",
+    "icons": {
+        "16": "icons/icon.png",
+        "48": "icons/icon.png",
+        "128": "icons/icon.png"
+    },
+    "permissions": [
+        "*://*.github.com/*"
+    ],
+    "content_scripts": [
+        {
+            "matches": [
+                "*://*.github.com/*"
+            ],
+            "js": [
+                "src/fix-compare.js",
+                "src/fix-title.js"
+            ]
+        }
+    ]
+}
