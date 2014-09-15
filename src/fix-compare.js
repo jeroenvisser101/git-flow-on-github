@@ -1,15 +1,18 @@
 (function (document, window) {
+    // Because sometimes the URL is url-encoded
+    var href = decodeURIComponent(window.location.href);
+
     // First, check if we have to do anything
     if (window.location.href.match(/\/compare\//i)) {
         // Define our variables:
-        var is_feature = !!window.location.href.match(/feature/i),
-            is_hotfix = !!window.location.href.match(/hotfix/i),
-            is_default = !window.location.href.match(/develop|master/i),
+        var is_feature = !!href.match(/feature/i),
+            is_hotfix = !!href.match(/hotfix/i),
+            is_default = !href.match(/develop|master/i),
             compare_to = 'develop', new_location, branch, repo_url;
 
         // Get the repo's url and the current branch from the location
-        repo_url = window.location.href.match(/https?:\/\/(www\.)?github\.com\/([a-zA-Z0-9\-_]+\/){2}/i)[0];
-        branch = window.location.href.match(/(?:compare\/(?:(?:develop|master)...)?)([a-z0-9\-_\/]+)/i)[1];
+        repo_url = href.match(/https?:\/\/(www\.)?github\.com\/([a-zA-Z0-9\-_]+\/){2}/i)[0];
+        branch = href.match(/(?:compare\/(?:(?:develop|master)...)?)([a-z0-9\-_\/\.]+)/i)[1];
 
         // We only change this when it's still defaulted
         if (is_default) {
