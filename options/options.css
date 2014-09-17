@@ -20,6 +20,10 @@ textarea:focus {
     border-color: #3055a7;
 }
 
+textarea.monotype {
+    font-family: "Courier New", Courier, monospace;
+}
+
 h3 {
     font-size: 2em;
     border-bottom: 1px solid #eee;

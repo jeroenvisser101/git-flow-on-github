@@ -1,6 +1,8 @@
 {
+    "author": "Jeroen Visser",
+    "short_name": "Git flow",
     "name": "Git flow (for Github)",
-    "version": "0.1.0",
+    "version": "1.1.0",
     "manifest_version": 2,
     "description": "Adds functionality to Github for working with the Git-flow workflow.",
     "icons": {
@@ -22,6 +24,9 @@
                 "*://*.github.com/*"
             ],
             "js": [
+                "src/functions.js",
+                "src/common.js",
+                "src/pr-template.js",
                 "src/fix-compare.js",
                 "src/fix-title.js"
             ]
