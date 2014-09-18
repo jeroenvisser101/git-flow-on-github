@@ -8,7 +8,7 @@
         var is_feature = !!href.match(/feature/i),
             is_hotfix = !!href.match(/hotfix/i),
             is_default = !href.match(/develop|master/i),
-            compare_to = 'develop', new_location, branch, repo_url;
+            compare_to, new_location, branch, repo_url;
 
         // Get the repo's url and the current branch from the location
         repo_url = href.match(/https?:\/\/(www\.)?github\.com\/([a-zA-Z0-9\-_]+\/){2}/i)[0];
@@ -26,12 +26,15 @@
                 compare_to = 'master';
             }
 
-            // Compose the new url
-            new_location = repo_url + 'compare/' + compare_to + '...' + branch + '?expand=1';
+            // Only change the comparison when we have to change it
+            if (compare_to) {
+                // Compose the new url
+                new_location = repo_url + 'compare/' + compare_to + '...' + branch + '?expand=1';
 
-            // Check if the url is other than the current one (to prevent a redirect loop)
-            if (window.location.href != new_location) {
-                window.location.href = new_location;
+                // Check if the url is other than the current one (to prevent a redirect loop)
+                if (window.location.href != new_location) {
+                    window.location.href = new_location;
+                }
             }
         }
     }
