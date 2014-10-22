@@ -1,4 +1,12 @@
+/**
+ * GitFlow
+ */
 var GitFlow = {
+    /**
+     * This is the global setting that's used for the pr_template
+     */
+    pr_template: "#### What does this PR do?\nWhich problem(s) does it fix and how? What does this PR add?\n\n#### Where should the reviewer start?\nExplain what should be set-up first in order to get the review started. Which page has to be viewed etc.\n\n#### How should this be manually tested?\n- [ ] Write down all\n- [ ] the steps a person\n- [ ] needs to take to test it.\n\n#### Documents\n##### Screenshots (if appropriate)\nIf this PR changes something that concerns UI changes, please post before and after screenshots here.\n\n##### Other documents\nIf you have any documents that have anything to do with this PR.\n\n#### Who should be notified?\n- [ ] Write down the name/department this branch needs\n- [ ] to be communicated to\n- [ ] Check the box(es) to indicate that it has been\n- [ ] communicated (add the label)\n\n#### What should happen on deployment? (check all that apply)\n- [x] The usual steps.\n- [ ] There are database changes, which should be run.\n- [ ] There are files that should be manually uploaded.\n\n#### Questions:\n- Does this require a blog post?\n- Does this require a knowledge base update?\n- Does support need training for this?\n- Does this has to be communicated to partners?",
+
     /**
      * Inserts pr_template info the given comment_field, no matter if
      * the field is filled or not.
