@@ -41,23 +41,10 @@
         }
     }
 
-    // Adds a clickHandler to the 'Create PR' button. This is because of the fact that
-    // it would otherwise redirect you to develop...feature/something when you just want
-    // to compare it to another branch.
-    function addCreatePRButtonClickHandler() {
-        var createPrButton;
-        // Check if there is a button to create the PR
-        if (createPrButton = document.querySelector('.js-details-target')) {
-            createPrButton.addEventListener('click', initFixCompare);
-        } else {
-            initFixCompare();
-        }
-    }
-
     // Make sure this only happens at the right time!
     if (document.readyState === 'complete' || document.readyState === 'interactive') {
-        addCreatePRButtonClickHandler();
+        initFixCompare();
     } else {
-        document.addEventListener('load', addCreatePRButtonClickHandler);
+        document.addEventListener('load', initFixCompare);
     }
 })(document, window);
