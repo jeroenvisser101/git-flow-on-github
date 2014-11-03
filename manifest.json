@@ -2,7 +2,7 @@
     "author": "Jeroen Visser",
     "short_name": "Git flow",
     "name": "Git flow (for Github)",
-    "version": "2.0.1",
+    "version": "2.0.2",
     "manifest_version": 2,
     "description": "Adds functionality to Github for working with the Git-flow workflow.",
     "icons": {
