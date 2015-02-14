@@ -19,6 +19,8 @@ var GitFlow = {
             comment_field = document.querySelector('[name="pull_request[body]"]');
         }
 
+        if (!comment_field) return;
+
         // Get the template from LocalStorage
         chrome.storage.sync.get({
             pr_template_v1: GitFlow.pr_template
@@ -34,6 +36,8 @@ var GitFlow = {
      * @param {HTMLElement} title_field
      */
     fix_title: function (title_field) {
+        if (!title_field) return;
+
         // Check if the title field is contaminated
         if (title_field.value.match(/^(hotfix|feature)\//i)) {
             title_field.value = ucfirst(title_field.value.replace(/^(hotfix|feature)\//i, ''));
