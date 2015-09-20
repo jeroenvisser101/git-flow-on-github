@@ -45,15 +45,13 @@ var GitFlow = {
      * new_pull_request form.
      */
     inject_pr_template_button: function () {
-        var form = document.getElementById('new_pull_request'),
+        var form_actions_container = document.querySelector('#new_pull_request .form-actions'),
             button = document.createElement('a');
 
         // To prevent exceptions from happening
-        if (typeof form !== 'undefined') {
+        if (typeof form_actions_container !== 'undefined') {
             // Add button styles
-            button.classList.add('button', 'composer-submit');
-            button.style.bottom = '55px';
-            button.style.textAlign = 'center';
+            button.classList.add('btn');
 
             // Add button text
             button.textContent = 'Insert template';
@@ -64,7 +62,7 @@ var GitFlow = {
             });
 
             // Insert the button
-            form.appendChild(button);
+            form_actions_container.appendChild(button);
         }
     },
 
@@ -88,17 +86,14 @@ var GitFlow = {
      * Inserts the checkbox into the new pull request form.
      */
     inject_under_construction_checkbox: function () {
-        var form = document.getElementById('new_pull_request'),
+        var target = document.querySelector('.comment-form-head > .right'),
             checkbox_container = document.createElement('div'),
             checkbox;
 
         // Checkbox styling
         checkbox_container.id = 'under_construction';
-        checkbox_container.style.position = 'absolute';
-        checkbox_container.style.right = '1%';
-        checkbox_container.style.bottom = '90px';
-        checkbox_container.style.width = '18%';
-        checkbox_container.style.padding = '10px';
+        checkbox_container.style.float = 'left';
+        checkbox_container.style.paddingTop = '10px';
         checkbox_container.innerHTML = '<label><input type="checkbox">Under construction</label>';
         checkbox = checkbox_container.querySelector('input[type="checkbox"]');
         checkbox.style.marginRight = '5px';
@@ -109,7 +104,7 @@ var GitFlow = {
         });
 
         // Add it to the form
-        form.appendChild(checkbox_container);
+        target.appendChild(checkbox_container);
     },
 
     /**
